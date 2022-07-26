@@ -1,0 +1,178 @@
+.container {
+  position: fixed;
+  padding: 0 5%;
+  width: 100%;
+  height: 5.6rem;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.authContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+.authButton {
+  height: 2.5rem;
+  width: 6rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  color: var(--background);
+  background: var(--gradientPinkToPurple);
+}
+.authButton:last-child {
+  width: fit-content;
+  height: fit-content;
+  color: var(--linkColor);
+  background: none;
+}
+.linksAndLogo {
+  display: flex;
+  align-items: center;
+  column-gap: 3.5rem;
+  color: var(--linkColor);
+}
+.links {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  column-gap: 1.5rem;
+}
+.links .active {
+  position: relative;
+}
+.links a.active::after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  height: 0.1rem;
+  width: 100%;
+  background-color: var(--linkColor);
+  border-radius: 1rem;
+  animation: wipe 500ms;
+}
+@keyframes wipe {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+.logoAndName {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  column-gap: 1rem;
+}
+.logoAndName img,
+.logoAndName h1 {
+  cursor: pointer;
+}
+.menuIconContainer {
+  display: none;
+}
+@media screen and (max-width: 888px) {
+  .authContainer,
+  .links {
+    display: none;
+  }
+  .logoAndName img {
+    width: 3rem !important;
+    height: 2rem !important;
+  }
+  .logoAndName h1 {
+    font-size: 1.5rem;
+  }
+  .menuIconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--linkColor);
+  }
+  .containerMobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 10rem;
+    z-index: 5;
+    padding: 5%;
+    background-color: var(--background);
+    box-shadow: var(--boxShadow);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .authContainerMobile {
+    display: flex;
+    align-items: center;
+    column-gap: 10%;
+  }
+  .authButtonMobile {
+    height: 2rem;
+    width: 5rem;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    color: var(--background);
+    background: var(--gradientPinkToPurple);
+  }
+  .authButtonMobile:last-child {
+    width: fit-content;
+    height: fit-content;
+    font-size: 0.95rem;
+    background: none;
+    color: var(--linkColor);
+  }
+  .linksMobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+    color: var(--linkColor);
+  }
+  .linksMobile .active {
+    position: relative;
+  }
+  .linksMobile a.active::after {
+    content: "";
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 0.1rem;
+    width: 100%;
+    background-color: var(--linkColor);
+    border-radius: 1rem;
+    animation: wipe 500ms;
+  }
+  .logoAndNameMobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.55rem;
+    width: 110%;
+    color: var(--linkColor);
+  }
+  .logoAndNameMobile img {
+    height: 1.5rem !important;
+    width: 2.5rem !important;
+  }
+  .logoAndNameMobile img,
+  .logoAndNameMobile h1 {
+    cursor: pointer;
+  }
+  .navbarMobileCloser {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+  }
+}
