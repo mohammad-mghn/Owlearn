@@ -3,6 +3,8 @@ import React from "react";
 import Link from "next/link";
 
 import FooterSection from "./footerSection";
+import { AnimatePresence } from "framer-motion";
+import AnimtionOnScroll from "./animtionOnScroll";
 
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";

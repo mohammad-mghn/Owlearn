@@ -20,7 +20,7 @@
   font-size: 0.9rem;
   border-radius: 0.5rem;
   color: var(--background);
-  background: var(--gradientPinkToPurple);
+  background: var(--purpleToPink);
 }
 .authButton:last-child {
   width: fit-content;
@@ -120,7 +120,7 @@
     font-size: 0.75rem;
     border-radius: 0.5rem;
     color: var(--background);
-    background: var(--gradientPinkToPurple);
+    background: var(--purpleToPink);
   }
   .authButtonMobile:last-child {
     width: fit-content;

@@ -26,7 +26,7 @@ const Navbar = () => {
     { header: "خانه", path: "/" },
     { header: "دوره ها", path: "/tutorials" },
     { header: "مقاله ها", path: "/blogs" },
-    { header: "همکاری با ما", path: "/cooperation" },
+    { header: "چت باکس", path: "/chat-box" },
     { header: "تماس با ما", path: "/contact" },
   ];
 
@@ -48,10 +48,6 @@ const Navbar = () => {
     });
   }, []);
 
-  const containerClear = {
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
-    backdropFilter: "blur(20px)",
-  };
   return (
     <>
       <header
@@ -72,8 +68,26 @@ const Navbar = () => {
           />
         </div>
         <div className={styles.authContainer}>
-          <button className={styles.authButton}>ثبت نام </button>
-          <button className={styles.authButton}>ورود</button>
+          <Link href={"/auth/signup"}>
+            <button
+              className={styles.authButton}
+              onClick={() => {
+                pathHandler("");
+              }}
+            >
+              ثبت نام{" "}
+            </button>
+          </Link>
+          <Link href={"/auth/login"}>
+            <button
+              className={styles.authButton}
+              onClick={() => {
+                pathHandler("");
+              }}
+            >
+              ورود
+            </button>
+          </Link>
         </div>
         <div className={styles.linksAndLogo}>
           <div className={styles.links}>
@@ -116,8 +130,26 @@ const Navbar = () => {
           <>
             <div className={styles.containerMobile}>
               <div className={styles.authContainerMobile}>
-                <button className={styles.authButtonMobile}>ثبت نام </button>
-                <button className={styles.authButtonMobile}>ورود</button>
+                <Link href={"/auth/signup"}>
+                  <button
+                    className={styles.authButtonMobile}
+                    onClick={() => {
+                      pathHandler("");
+                    }}
+                  >
+                    ثبت نام{" "}
+                  </button>
+                </Link>
+                <Link href={"/auth/login"}>
+                  <button
+                    className={styles.authButtonMobile}
+                    onClick={() => {
+                      pathHandler("");
+                    }}
+                  >
+                    ورود
+                  </button>
+                </Link>
               </div>
               <div className={styles.linksMobile}>
                 {links.map((link) => (

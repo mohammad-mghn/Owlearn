@@ -1,0 +1,90 @@
+$h1Color: var(--h1Color);
+$h2Color: var(--h2Color);
+$linkColor: var(--linkColor);
+$boxShadow: var(--boxShadow);
+$lightGrey: var(--lightGrey);
+$background: var(--background);
+$borderColor: var(--borderColor);
+$greyBackground: var(--greyBackground);
+$fadeBackground: var(--fadeBackground);
+$scrollbarColor: var(--scrollbarColor);
+$gradientOpacity: var(--gradientOpacity);
+$starsBackground: var(--starsBackground);
+$navbarBackground: var(--navbarBackground);
+$courseButtonColor: var(--courseButtonColor);
+$GradientOpacity: var(--GradientOpacity);
+$inputShadow: var(--inputShadow);
+
+// gradients
+$redGradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #b70000b8 5.73%,
+  #ff0000a7 18.23%,
+  #ff000000 100%
+);
+$orangeGradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #ffa515b8 20%,
+  #ffa51500 100%
+);
+$pinkGradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #ff0092d6 5.73%,
+  #ff009200 100%
+);
+$lightBlueGradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #30c9c7 20%,
+  #30c9c700 100%
+);
+$purpleLighterGradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #8e04ec96 0%,
+  #8e04ec00 100%
+);
+$redToOrange: linear-gradient(90deg, #ff0000e0 0.18%, #ffac0ae8 100.18%);
+$blueGradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #5c84ff 5.73%,
+  #5c84ff00 100%
+);
+$purpleGradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #b246e6 14.58%,
+  #b246e600 100%
+);
+$blueGradinet: radial-gradient(
+  50% 50% at 50% 50%,
+  #002fb6 0%,
+  rgba(0, 47, 182, 0) 100%
+);
+$purpleToPink: linear-gradient(90deg, #f920c3 0%, #8703f5 100%);
+$lightBlueToBlue: linear-gradient(270deg, #00c9bdcc 0%, #00199e 100%);
+
+@mixin flex-divided {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-row {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin center {
+  display: grid;
+  place-items: center;
+}

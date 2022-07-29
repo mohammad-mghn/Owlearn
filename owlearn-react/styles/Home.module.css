@@ -1,7 +1,9 @@
 .container {
   position: relative;
   width: 100vw;
-  overflow: hidden;
+}
+.container button {
+  transition: all 750ms;
 }
 .container::after {
   content: "";
@@ -29,11 +31,12 @@
 .landingImage::after {
   content: "";
   position: absolute;
-  top: -2rem;
-  left: -1rem;
+  top: -0.5rem;
+  left: 1.5rem;
   z-index: -1;
-  height: 18rem;
-  width: 18rem;
+  height: 14rem;
+  width: 14rem;
+  opacity: var(--GradientOpacity);
   background: var(--lightBlueGradient);
 }
 .landingImage::before {
@@ -50,7 +53,7 @@
   margin-top: -2.5rem;
   width: 28rem;
 }
-.landingData h1 {
+.landingData h2 {
   color: var(--h1Color);
   font-size: 3rem;
   margin: 0;
@@ -81,7 +84,10 @@
   border-radius: 0.5rem;
   font-size: 1rem;
   color: var(--background);
-  background: var(--gradientPurpleToPink);
+  background: var(--purpleToPink);
+}
+.landingData button:hover {
+  box-shadow: 0 0 20px #c011db;
 }
 .pinkLandingGradient {
   position: absolute;
@@ -93,9 +99,7 @@
   background: var(--pinkGradient);
 }
 .detailsContainer {
-  position: relative;
-  inset: 5rem 12.5%;
-  margin-bottom: 10rem;
+  margin: 7.55rem 12.5%;
   padding: 0 5%;
   width: 75%;
   height: 8rem;
@@ -126,36 +130,42 @@
 }
 .descriptionContainer {
   position: relative;
+  top: 5rem;
   height: 25rem;
   padding: 0 5%;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.descriptionContainer::before {
+.descriptionImageContainer {
+  position: relative;
+}
+.descriptionImageContainer::before {
   content: "";
   position: absolute;
-  left: 5%;
-  top: -2.5rem;
-  width: 33rem;
-  height: 30rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 100%;
+  opacity: var(--GradientOpacity);
   background: var(--lightBlueGradient);
 }
 .descriptionContainer::after {
   content: "";
   position: absolute;
-  left: calc(100% - 8rem);
-  top: -2.5rem;
-  height: 30rem;
-  width: 30rem;
+  left: calc(100% - 7%);
+  top: -25%;
+  height: 150%;
+  width: 27.5rem;
   background: var(--blueGradient);
 }
 .descriptionTextContainer {
-  width: 30rem;
+  width: 27rem;
 }
 .descriptionContainer h3 {
-  padding-left: 2.5rem;
+  padding-left: 0.5rem;
   font-size: 2.25rem;
   font-weight: 500;
   color: var(--h1Color);
@@ -172,7 +182,10 @@
   font-size: 1rem;
   border-radius: 0.5rem;
   color: var(--background);
-  background: var(--gradientLightblueToBlue);
+  background: var(--lightBlueToBlue);
+}
+.descriptionTextContainer button:hover {
+  box-shadow: 0 0 20px #1a7fb6;
 }
 .FAQ_container {
   position: relative;
@@ -224,24 +237,41 @@
   font-size: 1rem;
   color: var(--lightGrey);
 }
-.event_container {
+.companies {
   margin: 7.5rem 0 5rem 0;
-  background: url("../public/system-background.png");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 7rem;
-  display: grid;
-  place-items: center;
-  color: #ffffff;
-  font-weight: 900;
-  text-align: center;
-  box-shadow: 0 0 20px black;
-  text-shadow: 0 0 10px #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.companies h2 {
+  font-size: 1.5rem;
+  color: var(--h1Color);
+  text-shadow: 0 0 10px var(--h1Color);
+}
+.companies div {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
 }
 @media screen and (max-width: 800px) {
   .container {
     height: min-content;
+  }
+  .container::after {
+    top: -55vw;
+    left: calc(100% - 75vw);
+    height: 125vw;
+    width: 125vw;
+  }
+  .pinkLandingGradient {
+    top: 5vw;
+    left: -0vw;
+    height: 150vw;
+    width: 150vw;
   }
   .landingSection {
     position: relative;
@@ -252,10 +282,18 @@
     justify-content: flex-end;
     row-gap: 20vw;
   }
+  .landingImage::after {
+    top: -4%;
+    left: -3.5%;
+    height: 45%;
+    width: 40%;
+    opacity: 1;
+    background: var(--lightBlueGradient);
+  }
   .landingData {
     width: 90%;
   }
-  .landingData h1 {
+  .landingData h2 {
     margin-top: 15vw;
     font-size: 9vw;
   }
@@ -281,16 +319,6 @@
     top: 30vh;
     left: -100%;
   }
-  .landingImage::after {
-    content: "";
-    position: absolute;
-    top: -15%;
-    left: -17.5%;
-    z-index: -1;
-    height: 75%;
-    width: 75%;
-    background: var(--lightBlueGradient);
-  }
   .landingImage::before {
     content: "";
     position: absolute;
@@ -303,9 +331,10 @@
   }
   .detailsContainer {
     inset: 5rem 25%;
-    margin-bottom: 10rem;
-    padding: 5% 0;
-    width: 50%;
+    margin: 20vw 50%;
+    padding: 7.5vw 15vw;
+    transform: translateX(-50%);
+    width: fit-content;
     height: fit-content;
     flex-direction: column;
   }
@@ -319,9 +348,17 @@
     align-items: center;
     flex-direction: column;
     height: 15vw;
+    width: 100%;
+    text-align: center;
+  }
+  .descriptionContainer::after {
+    height: 70%;
+    top: -15%;
+    left: calc(100% - 15%);
   }
   .descriptionContainer {
-    margin-bottom: 0;
+    top: 5vw;
+    margin-bottom: 15vw;
     flex-direction: column-reverse;
     height: fit-content;
   }
@@ -342,17 +379,19 @@
     font-size: 0.85rem;
   }
   .descriptionContainer::before {
-    top: 45%;
+    top: 67.5%;
     left: 0;
     height: 50%;
     width: 100%;
   }
-  .descriptionContainer::after {
-    display: none;
-  }
   .FAQ_container {
     flex-direction: column-reverse;
     row-gap: 10vw;
+  }
+  .FAQ_container::before {
+    height: 75%;
+    top: 25%;
+    left: calc(100% - 17.5%);
   }
   .FAQ_image_container img {
     width: 90vw;
@@ -370,8 +409,14 @@
   .FAQ_data p {
     font-size: 3vw;
   }
-  .event_container {
-    font-size: 3.5vw;
-    padding: 0 5vw;
+  .companies {
+    row-gap: 5vw;
+  }
+  .companies h2 {
+    font-size: 4vw;
+  }
+  .companies div {
+    width: 90%;
+    column-gap: 5vw;
   }
 }

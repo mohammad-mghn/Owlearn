@@ -51,7 +51,7 @@
   position: relative;
   border: none;
   color: var(--background);
-  background: var(--gradientRedToOrange);
+  background: var(--redToOrange);
 }
 .courseCategoryButton.courseCategoryButtonActived::before {
   content: "";
@@ -65,6 +65,7 @@
   background: var(--orangeGradient);
 }
 .coursesMainContinter {
+  padding-top: 0.5rem;
   display: flex;
   flex-direction: row-reverse;
   gap: 2rem calc((100% - 75rem) / 2);
@@ -77,6 +78,11 @@
   border-radius: 1rem;
   border: 1px solid var(--borderColor);
   overflow: hidden;
+  transition: all 500ms;
+}
+.courseContainer:hover {
+  transform: translateY(-2.5%);
+  box-shadow: var(--boxShadow);
 }
 .cover {
   height: 15.5rem;
@@ -178,17 +184,15 @@
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: 0.5rem;
-  color: var(--background);
+  color: var(--borderColor);
   background-color: var(--background);
   border: 2px solid var(--borderColor);
-  color: var(--borderColor);
-  transition: all 500ms;
+  transition: all 750ms;
 }
 .price__button button:hover {
-  border: none;
   color: var(--background);
-  background: var(--gradientRedToOrange);
-  box-shadow: 0 0 20px #ff5205;
+  background: var(--redToOrange);
+  transition: all 750ms;
 }
 .price_container {
   all: inherit;
@@ -213,7 +217,7 @@
 }
 @media screen and (max-width: 450px) {
   .courseContainer {
-    width: 100%;
+    width: 90vw;
     height: fit-content;
   }
   .course_header {
@@ -238,7 +242,7 @@
     width: 50vw;
   }
   .price_container h6 {
-    font-size: 3.5vw;
+    font-size: 4vw;
   }
 }
 @media screen and (max-width: 800px) {

@@ -1,10 +1,13 @@
 import React from "react";
 
 import CategoryButton from "./categoryButton";
+import AnimtionOnScroll from "./animtionOnScroll";
 
 import styles from "../styles/course.module.css";
 
 import Course from "./course";
+
+import { AnimatePresence, AnimationType, motion } from "framer-motion";
 
 const Courses = () => {
   const [selectedCourseCategory, setSelectedCourseCategory] =
@@ -109,9 +112,17 @@ const Courses = () => {
         ))}
       </div>
       <div className={styles.coursesMainContinter}>
-        {projects.map((item) => (
-          <Course key={item.id} course={item} />
-        ))}
+        <AnimatePresence>
+          {projects.map((item) => (
+            <AnimtionOnScroll
+              key={"description"}
+              initial={{ scale: 1.2, opacity: 0 }}
+              onScreen={{ scale: 1, opacity: 1 }}
+            >
+              <Course course={item} />
+            </AnimtionOnScroll>
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   );

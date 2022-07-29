@@ -30,10 +30,21 @@
   align-items: center;
   justify-content: end;
   flex-direction: row-reverse;
+  overflow: visible;
 }
 .comment_data_header img {
+  position: relative;
   height: 3.5rem !important;
   width: 3.5rem !important;
+  background: var(--pin);
+}
+.comment_data_header::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto calc(100% - 3.5rem);
+  width: 4rem;
+  height: 4rem;
+  background: var(--redGradient);
 }
 .comment_header_data {
   margin-right: 0.5rem;
@@ -109,13 +120,25 @@
   height: 150%;
   background: var(--orangeGradient);
 }
+.comments_course_button {
+  cursor: pointer;
+  transition: all 750ms;
+}
+.comments_course_button:hover {
+  color: #ff0200;
+  filter: drop-shadow(0 0 10px #9e0000);
+}
 @media screen and (max-width: 800px) {
   .container {
+    margin-bottom: 10vw;
     flex-direction: column-reverse;
     row-gap: 10vw;
   }
+  .container::before {
+   display: none;
+  }
   .graduates_comments_image img {
-    width:95vw !important;
+    width: 95vw !important;
   }
   .graduates_comments {
     width: 100%;

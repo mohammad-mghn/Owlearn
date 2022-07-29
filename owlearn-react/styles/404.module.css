@@ -16,8 +16,8 @@
   position: absolute;
   inset: 50%;
   transform: translate(-50%, -50%);
-  height: 150%;
-  width: 150%;
+  height: 105%;
+  width: 110%;
   background: var(--orangeGradient);
 }
 .landing_text_box {
@@ -29,7 +29,7 @@
 .landing_text_box::before {
   content: "";
   position: absolute;
-  inset: -20% auto auto 80%;
+  inset: -25% auto auto 80%;
   height: 150%;
   width: 30rem;
   background: var(--lightBlueGradient);

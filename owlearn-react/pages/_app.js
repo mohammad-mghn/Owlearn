@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps }) {
         <GlobalStyles />
 
         <Layout>
-          {/* <PageTransition timeout={500} classNames="page-transition"> */}
+          <PageTransition timeout={500} classNames="page-transition">
             <Component {...pageProps} key={router.asPath} />
-          {/* </PageTransition> */}
+          </PageTransition>
         </Layout>
       </ThemeProvider>
     </Provider>

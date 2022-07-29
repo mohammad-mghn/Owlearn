@@ -76,7 +76,7 @@
   color: var(--h2Color);
 }
 .footer_options_container p {
-  width: 90%;
+  width: 100%;
 }
 .social_icons_container {
   margin-top: 0.5rem;
@@ -108,28 +108,28 @@
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(185, 0, 0, 0.5) 5%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(185, 0, 0, 0) 100%
   );
 }
 .social_icon:nth-child(2)::before {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(0, 12, 177, 0.5) 5%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(0, 12, 177, 0) 100%
   );
 }
 .social_icon:nth-child(3)::before {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(0, 136, 146, 0.5) 5%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(0, 136, 146, 0) 100%
   );
 }
 .social_icon:nth-child(4)::before {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(183, 0, 255, 0.5) 5%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(183, 0, 255, 0) 100%
   );
 }
 .superior_img:nth-child(1) {
