@@ -9,7 +9,7 @@ import { CSSTransition } from "react-transition-group";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 
-import styles from "../styles/layout.module.css";
+import styles from "../styles/layout/layout.module.css";
 import Footer from "./footer";
 
 const Layout = ({ children }) => {

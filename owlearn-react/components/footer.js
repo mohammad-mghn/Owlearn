@@ -3,15 +3,13 @@ import React from "react";
 import Link from "next/link";
 
 import FooterSection from "./footerSection";
-import { AnimatePresence } from "framer-motion";
-import AnimtionOnScroll from "./animtionOnScroll";
 
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-import styles from "../styles/footer.module.css";
+import styles from "../styles/footer/footer.module.css";
 
 const Footer = () => {
   return (

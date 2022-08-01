@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import styles from "../styles/footer.module.css";
+import styles from "../styles/footer/footer.module.css";
 
 const FooterSection = ({ header, items }) => {
   return (

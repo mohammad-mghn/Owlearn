@@ -72,6 +72,12 @@ $lightBlueToBlue: linear-gradient(270deg, #00c9bdcc 0%, #00199e 100%);
   align-items: center;
 }
 
+@mixin flex-row-reverse {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
 @mixin flex-column {
   display: flex;
   align-items: center;

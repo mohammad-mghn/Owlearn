@@ -1,0 +1,183 @@
+@import "../variables/variables.scss";
+
+.container {
+  @include flex-divided;
+  position: relative;
+  padding: 2.5% 5%;
+  column-gap: 5rem;
+  .graduates_comments_image img {
+    height: 24rem !important;
+  }
+  .graduates_comments {
+    width: 40%;
+    height: fit-content;
+    h3 {
+      height: 4rem;
+      font-size: 1.75rem;
+      color: $h1Color;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -25% auto auto 93.5%;
+    width: 40%;
+    height: 150%;
+    background: $orangeGradient;
+  }
+}
+.slider {
+  width: 100%;
+}
+.comment_data_header {
+  @include flex-row;
+  position: relative;
+  margin-right: 3rem;
+  width: calc(100% - 3rem);
+  justify-content: end;
+  flex-direction: row-reverse;
+  overflow: visible !important;
+  img {
+    position: relative;
+    height: 3.5rem !important;
+    width: 3.5rem !important;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto calc(100% - 3.5rem);
+    width: 4rem;
+    height: 4rem;
+    background: $redGradient;
+  }
+}
+.comment_header_data {
+  margin-right: 0.5rem;
+  h4 {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: $h2Color;
+  }
+  h5 {
+    width: 100%;
+    height: 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $h1Color;
+  }
+}
+.course_info_container {
+  @include flex-divided;
+  position: relative;
+  margin-top: 2rem;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -10% 0 0 0;
+    width: 100%;
+    height: 0.05rem;
+    background-color: $borderColor;
+  }
+}
+.comment_data_container p {
+  margin: 2.5% 3.5rem;
+  height: 11rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: $lightGrey;
+}
+.course_info {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $h1Color;
+  }
+  h5 {
+    display: flex;
+    column-gap: 0.25rem;
+    align-items: baseline;
+    flex-direction: row-reverse;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: $h2Color;
+    span {
+      font-family: "IRANSansWeb(FaNum)";
+    }
+  }
+}
+.graduates_comments_image {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 50%;
+    height: 125%;
+    width: 125%;
+    transform: translate(-50%, -50%);
+    background: $redGradient;
+  }
+}
+.comments_course_button {
+  transition: all 750ms;
+  cursor: pointer;
+  &:hover {
+    color: #ff0200;
+    filter: drop-shadow(0 0 10px #9e0000);
+  }
+}
+@media screen and (max-width: 800px) {
+  .container {
+    margin-bottom: 10vw;
+    flex-direction: column-reverse;
+    row-gap: 10vw;
+    .graduates_comments_image img {
+      width: 95vw !important;
+    }
+    .graduates_comments {
+      width: 100%;
+      h3 {
+        height: 10vw;
+        font-size: 5vw;
+      }
+    }
+    &::before {
+      display: none;
+    }
+  }
+  .comment_data_header {
+    margin-right: 4vw;
+    width: calc(100% - 4vw);
+    img {
+      height: 12vw !important;
+      width: 12vw !important;
+    }
+  }
+  .comment_header_data {
+    h5 {
+      height: 6vw;
+      font-size: 3.5vw;
+    }
+    h4 {
+      font-size: 3.25vw;
+    }
+  }
+  .comment_data_container p {
+    margin: 2.5% 9vw;
+    height: 50vw;
+    font-size: 3.25vw;
+  }
+  .course_info {
+    h4 {
+      font-size: 3.75vw;
+    }
+    h5 {
+      column-gap: 1vw;
+      font-size: 3.4vw;
+    }
+  }
+}
+@media screen and (min-width: 1500px) {
+  .container {
+    margin-bottom: 5rem;
+  }
+}

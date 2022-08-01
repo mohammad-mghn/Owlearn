@@ -12,7 +12,7 @@ import avatar from "../public/avatar.svg";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from "../styles/graduatesComments.module.css";
+import styles from "../styles/graduatesComments/graduatesComments.module.css";
 
 const GraduatesComments = () => {
   SwiperCore.use([Autoplay]);

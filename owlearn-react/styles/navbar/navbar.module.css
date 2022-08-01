@@ -1,0 +1,201 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0 5%;
+  width: 100%;
+  height: 5.6rem;
+  z-index: 2;
+  top: 0;
+}
+
+.menu_icon_container {
+  display: none;
+}
+
+.auth_buttons_container {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+.auth_buttons_container button {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  color: var(--background);
+  background: linear-gradient(90deg, #f920c3 0%, #8703f5 100%);
+}
+.auth_buttons_container button:last-child {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: none;
+  color: var(--linkColor);
+}
+
+.links__logo {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 3.5rem;
+       column-gap: 3.5rem;
+  color: var(--linkColor);
+}
+.links__logo div:first-child {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.links__logo div:first-child .active {
+  position: relative;
+}
+.links__logo div:first-child .active::after {
+  content: "";
+  position: absolute;
+  inset: 90% auto auto 50%;
+  transform: translate(-50%);
+  width: 100%;
+  height: 0.1rem;
+  border-radius: 1rem;
+  -webkit-animation: wipe 500ms;
+          animation: wipe 500ms;
+  background-color: var(--linkColor);
+}
+
+.logo__name {
+  display: flex;
+  align-items: center;
+}
+.logo__name h1,
+.logo__name img {
+  cursor: pointer;
+}
+
+@-webkit-keyframes wipe {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes wipe {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 888px) {
+  .auth_buttons_container,
+.links__logo div:first-child {
+    display: none;
+  }
+  .logo__name img {
+    width: 3rem !important;
+    height: 2rem !important;
+  }
+  .logo__name h1 {
+    font-size: 1.5rem;
+  }
+  .container_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 5;
+    width: 10rem;
+    height: 100vh;
+    flex-direction: column-reverse;
+    box-shadow: var(--boxShadow);
+    background-color: var(--background);
+  }
+  .menu_icon_container {
+    display: grid;
+    place-items: center;
+    color: var(--linkColor);
+  }
+  .auth_buttons_container_mobile {
+    all: unset;
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 10%;
+         column-gap: 10%;
+  }
+  .auth_buttons_container_mobile button {
+    width: 5rem;
+    height: 2rem;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    color: var(--background);
+    background: linear-gradient(90deg, #f920c3 0%, #8703f5 100%);
+  }
+  .auth_buttons_container_mobile button :last-child {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    font-size: 0.95rem;
+    background: none;
+    color: var(--linkColor);
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+    color: var(--linkColor);
+  }
+  .links .active {
+    position: relative;
+  }
+  .links .active::after {
+    content: "";
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    height: 0.1rem;
+    width: 100%;
+    border-radius: 1rem;
+    -webkit-animation: wipe 500ms;
+            animation: wipe 500ms;
+    transform: translate(-50%);
+    background-color: var(--linkColor);
+  }
+  .logo__name_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110%;
+    font-size: 0.55rem;
+    color: var(--linkColor);
+  }
+  .logo__name_container img {
+    height: 1.5rem !important;
+    width: 2.5rem !important;
+  }
+  .logo__name_container h1,
+.logo__name_container img {
+    cursor: pointer;
+  }
+  .navbarMobileCloser {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 4;
+    width: 100%;
+    height: 100vh;
+  }
+}/*# sourceMappingURL=navbar.module.css.map */

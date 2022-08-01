@@ -1,0 +1,78 @@
+@import "../variables/variables";
+.container {
+  margin: 7rem 5%;
+  width: 90%;
+  @include flex-divided;
+}
+.landing_image {
+  position: relative;
+  img {
+    width: 35rem !important;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 50%;
+    width: 110%;
+    height: 105%;
+    transform: translate(-50%, -50%);
+    background: $orangeGradient;
+  }
+}
+.landing_text_box {
+  position: relative;
+  margin-top: 5%;
+  direction: rtl;
+  color: var(--h1Color);
+  h3 {
+    font-size: 5.5rem;
+    line-height: 100%;
+  }
+  h4 {
+    width: 65%;
+    font-size: 2.5rem;
+  }
+  P {
+    color: $h2Color;
+    font-size: 1rem;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -25% auto auto 80%;
+    height: 150%;
+    width: 30rem;
+    background: var(--lightBlueGradient);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .contianer {
+    flex-direction: column-reverse;
+    row-gap: 25vw;
+  }
+  .landing_image {
+    img {
+      width: 80% !important;
+    }
+  }
+  .landing_text_box {
+    margin: 0;
+    h3 {
+      font-size: 14vw;
+      line-height: 100%;
+    }
+    h4 {
+      width: 65%;
+      font-size: 7vw;
+    }
+    p {
+      color: $h2Color;
+      font-size: 3vw;
+    }
+    &::before {
+      inset: -30% auto auto 75%;
+      height: 100vw;
+      width: 100vw;
+    }
+  }
+}

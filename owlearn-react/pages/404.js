@@ -5,7 +5,7 @@ import Header from "../components/header";
 
 import Landing from "../public/404-landing.svg";
 
-import styles from "../styles/404.module.css";
+import styles from "../styles/404/404.module.css";
 
 const Error404 = () => {
   return (

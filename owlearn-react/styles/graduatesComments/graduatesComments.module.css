@@ -1,42 +1,53 @@
 .container {
-  position: relative;
-  padding: 2.5% 5%;
   display: flex;
   align-items: center;
-  column-gap: 5rem;
   justify-content: space-between;
+  position: relative;
+  padding: 2.5% 5%;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
 }
-.graduates_comments_image img {
+.container .graduates_comments_image img {
   height: 24rem !important;
 }
-.graduates_comments {
-  width: 45%;
+.container .graduates_comments {
+  width: 40%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
-.graduates_comments h3 {
+.container .graduates_comments h3 {
   height: 4rem;
   font-size: 1.75rem;
   color: var(--h1Color);
 }
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -25% auto auto 93.5%;
+  width: 40%;
+  height: 150%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 165, 21, 0.7215686275) 20%, rgba(255, 165, 21, 0) 100%);
+}
+
 .slider {
   width: 100%;
 }
+
 .comment_data_header {
+  display: flex;
+  align-items: center;
   position: relative;
   margin-right: 3rem;
   width: calc(100% - 3rem);
-  overflow: visible !important;
-  display: flex;
-  align-items: center;
   justify-content: end;
   flex-direction: row-reverse;
-  overflow: visible;
+  overflow: visible !important;
 }
 .comment_data_header img {
   position: relative;
   height: 3.5rem !important;
   width: 3.5rem !important;
-  background: var(--pin);
 }
 .comment_data_header::before {
   content: "";
@@ -44,10 +55,16 @@
   inset: 0 auto auto calc(100% - 3.5rem);
   width: 4rem;
   height: 4rem;
-  background: var(--redGradient);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(183, 0, 0, 0.7215686275) 5.73%, rgba(255, 0, 0, 0.6549019608) 18.23%, rgba(255, 0, 0, 0) 100%);
 }
+
 .comment_header_data {
   margin-right: 0.5rem;
+}
+.comment_header_data h4 {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--h2Color);
 }
 .comment_header_data h5 {
   width: 100%;
@@ -56,24 +73,13 @@
   font-weight: 600;
   color: var(--h1Color);
 }
-.comment_header_data h4 {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--h2Color);
-}
-.comment_data_container p {
-  margin: 2.5% 3.5rem;
-  height: 11rem;
-  overflow-y: auto;
-  font-size: 0.9rem;
-  color: var(--lightGrey);
-}
+
 .course_info_container {
-  position: relative;
-  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  margin-top: 2rem;
 }
 .course_info_container::after {
   content: "";
@@ -83,6 +89,15 @@
   height: 0.05rem;
   background-color: var(--borderColor);
 }
+
+.comment_data_container p {
+  margin: 2.5% 3.5rem;
+  height: 11rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: var(--lightGrey);
+}
+
 .course_info h4 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -90,7 +105,8 @@
 }
 .course_info h5 {
   display: flex;
-  column-gap: 0.25rem;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
   align-items: baseline;
   flex-direction: row-reverse;
   font-size: 0.9rem;
@@ -100,6 +116,7 @@
 .course_info h5 span {
   font-family: "IRANSansWeb(FaNum)";
 }
+
 .graduates_comments_image {
   position: relative;
 }
@@ -110,42 +127,36 @@
   height: 125%;
   width: 125%;
   transform: translate(-50%, -50%);
-  background: var(--redGradient);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(183, 0, 0, 0.7215686275) 5.73%, rgba(255, 0, 0, 0.6549019608) 18.23%, rgba(255, 0, 0, 0) 100%);
 }
-.container::before {
-  content: "";
-  position: absolute;
-  inset: -25% auto auto 92.5%;
-  width: 40%;
-  height: 150%;
-  background: var(--orangeGradient);
-}
+
 .comments_course_button {
-  cursor: pointer;
   transition: all 750ms;
+  cursor: pointer;
 }
 .comments_course_button:hover {
   color: #ff0200;
   filter: drop-shadow(0 0 10px #9e0000);
 }
+
 @media screen and (max-width: 800px) {
   .container {
     margin-bottom: 10vw;
     flex-direction: column-reverse;
     row-gap: 10vw;
   }
-  .container::before {
-   display: none;
-  }
-  .graduates_comments_image img {
+  .container .graduates_comments_image img {
     width: 95vw !important;
   }
-  .graduates_comments {
+  .container .graduates_comments {
     width: 100%;
   }
-  .graduates_comments h3 {
+  .container .graduates_comments h3 {
     height: 10vw;
     font-size: 5vw;
+  }
+  .container::before {
+    display: none;
   }
   .comment_data_header {
     margin-right: 4vw;
@@ -171,7 +182,13 @@
     font-size: 3.75vw;
   }
   .course_info h5 {
-    column-gap: 1vw;
+    -moz-column-gap: 1vw;
+         column-gap: 1vw;
     font-size: 3.4vw;
   }
 }
+@media screen and (min-width: 1500px) {
+  .container {
+    margin-bottom: 5rem;
+  }
+}/*# sourceMappingURL=graduatesComments.module.css.map */

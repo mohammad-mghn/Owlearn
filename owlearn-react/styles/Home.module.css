@@ -392,6 +392,7 @@
     height: 75%;
     top: 25%;
     left: calc(100% - 17.5%);
+    width: 100vw;
   }
   .FAQ_image_container img {
     width: 90vw;
@@ -418,5 +419,23 @@
   .companies div {
     width: 90%;
     column-gap: 5vw;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .container {
+    padding: 0 7.5%;
+  }
+  .landingData {
+    width: 27.5%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .container {
+    padding: 0;
+  }
+  .landingData {
+    margin-right: 0%;
   }
 }

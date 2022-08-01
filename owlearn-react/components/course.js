@@ -8,15 +8,15 @@ import courseUser from "../public/icons/course-users.svg";
 import starDark from "../public/star-dark.svg";
 import starLight from "../public/star-light.svg";
 import starsDark from "../public/stars-background-dark.svg";
-import starsLight from "../public/stars-background-light.svg";
+import starsLight from "../public/stars-background-light.svg";  
 
-import styles from "../styles/course.module.css";
+import styles from "../styles/course/course.module.css";
 
 const Course = ({ course }) => {
   const isLight = useSelector((state) => state.ui.isLight);
 
   return (
-    <div className={styles.courseContainer}>
+    <div className={styles.course_container}>
       <div className={styles.cover}>
         <img src={course.cover} alt="" loading="lazy" />
       </div>

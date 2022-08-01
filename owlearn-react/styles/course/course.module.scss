@@ -1,0 +1,269 @@
+@import "../variables/variables.scss";
+
+.container {
+  margin-bottom: 5rem;
+  padding: 0 5%;
+  width: 100%;
+  h3 {
+    color: $h1Color;
+    font-size: 1.75rem;
+  }
+}
+.coursesCategoriesContainer {
+  padding: 0.75rem 5% 0 0;
+  height: 7rem;
+  width: 105%;
+  overflow: hidden;
+  .coursesCategoriesMainContainer {
+    @include flex-row-reverse;
+    position: relative;
+    margin-bottom: 2%;
+    width: 100%;
+    height: 4rem;
+    column-gap: 0.75rem;
+    justify-content: end;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 115% auto auto 0;
+      height: 3%;
+      width: 100%;
+      z-index: 1;
+      border-radius: 1rem;
+      background: $borderColor;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -25% auto auto 0;
+      width: 10rem;
+      height: 150%;
+      background: $fadeBackground;
+      transform: rotate(180deg);
+    }
+  }
+}
+.courseCategoryButton {
+  padding: 0 2rem;
+  height: 2.75rem;
+  min-width: fit-content;
+  font-size: 0.95rem;
+  border-radius: 2rem;
+  color: $h2Color;
+  background-color: $background;
+  border: 1px solid $borderColor;
+  &.courseCategoryButtonActived {
+    position: relative;
+    border: none;
+    color: $background;
+    background: $redToOrange;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -20%;
+      z-index: -1;
+      transform: translateY(-50%);
+      width: 140%;
+      height: 6rem;
+      background: $orangeGradient;
+    }
+  }
+}
+.courses_parent_containter {
+  padding-top: 0.5rem;
+  width: 100%;
+  gap: 2rem 1.5rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+.course_container {
+  width: 25rem;
+  height: fit-content;
+  border-radius: 1rem;
+  border: 1px solid $borderColor;
+  overflow: hidden;
+  transition: all 500ms;
+  &:hover {
+    transform: translateY(-2.5%);
+    box-shadow: $boxShadow;
+  }
+}
+.cover {
+  height: 15.5rem;
+  width: 100%;
+  img {
+    height: 100% !important;
+  }
+}
+.courseDataCotnainer {
+  height: 100%;
+  margin-top: -5%;
+  width: 100%;
+  padding: 0.75rem 1rem;
+}
+.stars__header {
+  @include flex-divided;
+}
+.course_header {
+  position: relative;
+  color: $h1Color;
+  font-size: 1.1rem;
+  width: 17rem;
+  height: 2rem;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 4rem;
+    height: 100%;
+    background: $fadeBackground;
+    transform: rotate(180deg);
+  }
+}
+.stars_container {
+  @include center;
+  position: relative;
+  margin-left: -0.5rem;
+  width: 6rem;
+  height: 1.5rem;
+  img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .stars_rate_container {
+    position: absolute;
+    top: 0;
+    width: 6rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.18rem;
+    padding-left: 0.63rem;
+    .star_item {
+      margin-top: 0.05rem !important;
+      height: 0.9rem !important;
+      width: 0.9rem !important;
+    }
+  }
+}
+.creator__users_count {
+  margin: 0.25rem 0;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: $lightGrey;
+  .creator__users_count h5 {
+    all: inherit;
+  }
+  h6 {
+    all: inherit;
+    column-gap: 0.25rem;
+    font-family: "IRANSansWeb(FaNum)";
+    img {
+      width: 0.8rem !important;
+      height: 0.8rem !important;
+    }
+  }
+}
+.course_paragraph {
+  margin: 0.25rem 0;
+  height: 8rem;
+  width: 100%;
+  text-align: justify;
+  direction: rtl;
+  font-size: 0.9rem;
+  color: var(--h2Color);
+}
+.price__button {
+  @include flex-divided;
+  button {
+    height: 2.75rem;
+    width: 9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    color: $borderColor;
+    background-color: $background;
+    border: 2px solid $borderColor;
+    transition: all 750ms;
+    &:hover {
+      border: none;
+      color: $background;
+      background: $redToOrange;
+      transition: all 750ms;
+    }
+  }
+  .price_container {
+    all: inherit;
+    justify-content: start;
+    width: 14rem;
+    height: 2.75rem;
+    overflow: hidden;
+    column-gap: 0.5rem;
+    color: $h2Color;
+    h6 {
+      font-size: 1.1rem;
+      font-family: "IRANSansWeb(FaNum)";
+      font-weight: 100;
+      &.off {
+        color: var(--lightGrey);
+        text-decoration: line-through;
+      }
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .courses_parent_containter {
+    width: 100%;
+    gap: 4vw 0;
+    grid-template-columns: repeat(auto-fit, 100%);
+  }
+  .course_container {
+    width: 90vw;
+  }
+  .cover {
+    height: 50vw;
+    width: 100%;
+    img {
+      width: 100% !important;
+    }
+  }
+  .course_header {
+    font-size: 3.5vw;
+    height: 7vw;
+  }
+  .course_header::after {
+    width: 10vw;
+  }
+  .creator__users_count {
+    font-size: 3vw;
+  }
+  .course_paragraph {
+    height: fit-content;
+    font-size: 3.25vw;
+  }
+  .price__button {
+    button {
+      height: 10vw;
+      width: 37.5vw;
+      font-size: 3vw;
+    }
+  }
+  .price_container {
+    width: 50vw;
+    h6 {
+      font-size: 4vw !important;
+    }
+    P {
+      font-size: 3.5vw !important;
+    }
+  }
+}

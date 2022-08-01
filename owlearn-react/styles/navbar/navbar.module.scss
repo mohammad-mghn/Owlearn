@@ -1,0 +1,176 @@
+@import "../variables/variables.scss";
+
+.container {
+  @include flex-divided;
+  position: fixed;
+  padding: 0 5%;
+  width: 100%;
+  height: 5.6rem;
+  z-index: 2;
+  top: 0;
+}
+.menu_icon_container {
+  display: none;
+}
+.auth_buttons_container {
+  @include flex-row;
+  column-gap: 1.25rem;
+
+  // sign up button styles
+  button {
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    color: $background;
+    background: $purpleToPink;
+
+    // sign in button styles
+    &:last-child {
+      width: fit-content;
+      height: fit-content;
+      background: none;
+      color: $linkColor;
+    }
+  }
+}
+.links__logo {
+  @include flex-row;
+  column-gap: 3.5rem;
+  color: $linkColor;
+
+  // links container
+  div:first-child {
+    @include flex-row;
+    flex-direction: row-reverse;
+    column-gap: 1.5rem;
+    .active {
+      position: relative;
+
+      // current link
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 90% auto auto 50%;
+        transform: translate(-50%);
+        width: 100%;
+        height: 0.1rem;
+        border-radius: 1rem;
+        animation: wipe 500ms;
+        background-color: $linkColor;
+      }
+    }
+  }
+}
+.logo__name {
+  @include flex-row;
+  // because name and logo is home link.
+  h1,
+  img {
+    cursor: pointer;
+  }
+}
+
+// animations
+@keyframes wipe {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+// responsive
+@media screen and (max-width: 888px) {
+  .auth_buttons_container,
+  .links__logo div:first-child {
+    display: none;
+  }
+  .logo__name {
+    img {
+      width: 3rem !important;
+      height: 2rem !important;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .container_mobile {
+    @include flex-divided;
+    padding: 5%;
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 5;
+    width: 10rem;
+    height: 100vh;
+    flex-direction: column-reverse;
+    box-shadow: $boxShadow;
+    background-color: $background;
+  }
+  .menu_icon_container {
+    @include center;
+    color: $linkColor;
+  }
+  .auth_buttons_container_mobile {
+    all: unset;
+    @include flex-row;
+    column-gap: 10%;
+    button {
+      width: 5rem;
+      height: 2rem;
+      font-size: 0.75rem;
+      border-radius: 0.5rem;
+      color: $background;
+      background: $purpleToPink;
+      :last-child {
+        width: fit-content;
+        height: fit-content;
+        font-size: 0.95rem;
+        background: none;
+        color: var(--linkColor);
+      }
+    }
+  }
+  .links {
+    @include flex-column;
+    row-gap: 1rem;
+    color: $linkColor;
+    .active {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        height: 0.1rem;
+        width: 100%;
+        border-radius: 1rem;
+        animation: wipe 500ms;
+        transform: translate(-50%);
+        background-color: $linkColor;
+      }
+    }
+  }
+  .logo__name_container {
+    @include flex-divided;
+    width: 110%;
+    font-size: 0.55rem;
+    color: $linkColor;
+    img {
+      height: 1.5rem !important;
+      width: 2.5rem !important;
+    }
+    h1,
+    img {
+      cursor: pointer;
+    }
+  }
+  .navbarMobileCloser {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 4;
+    width: 100%;
+    height: 100vh;
+  }
+}

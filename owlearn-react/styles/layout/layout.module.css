@@ -1,0 +1,15 @@
+.toggleTheme {
+  position: fixed;
+  bottom: 1rem;
+  right: 5%;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  color: var(--h2Color);
+  background: var(--background);
+  box-shadow: var(--boxShadow);
+  overflow: hidden;
+  z-index: 10;
+}/*# sourceMappingURL=layout.module.css.map */

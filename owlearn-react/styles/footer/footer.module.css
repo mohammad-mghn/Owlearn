@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container {
   position: relative;
   padding: 2rem 2.5rem;
@@ -6,43 +7,46 @@
   height: 30rem;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 4.5%;
+  -moz-column-gap: 4.5%;
+       column-gap: 4.5%;
   justify-content: end;
+  flex-direction: row-reverse;
   border-radius: 1rem;
   box-shadow: var(--boxShadow);
-  flex-direction: row-reverse;
 }
 .container::before {
   content: "";
   position: absolute;
   inset: 100% 50%;
-  transform: translateX(-50%);
   width: 75%;
   height: 20rem;
-  background: var(--lightBlueGradient);
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, #30c9c7 20%, rgba(48, 201, 199, 0) 100%);
 }
 .container::after {
   content: "© تمامی حقوق مادی و معنوی این سایت متعلق به پای تو پای می باشد.";
   position: absolute;
   inset: 105% 50%;
   width: 50vw;
-  text-align: center;
-  transform: translateX(-50%);
   direction: rtl;
   color: var(--h2Color);
+  text-align: center;
+  transform: translateX(-50%);
 }
+
 .footer_section {
   width: 30%;
   height: 50%;
 }
-.footer_section:last-child {
-  flex-wrap: nowrap;
+.footer_section :last-child {
+  flex-wrap: wrap;
 }
 .footer_section h4 {
   font-size: 1.25rem;
   color: var(--h1Color);
   text-shadow: 0 0 10px #fff;
 }
+
 .footer_options_container {
   margin-top: 0.5rem;
   width: 100%;
@@ -56,10 +60,10 @@
 .footer_options_container h5 {
   width: 50%;
   height: 17%;
-  overflow: hidden;
-  font-weight: 500;
-  color: var(--h2Color);
   direction: rtl;
+  font-weight: 500;
+  overflow: hidden;
+  color: var(--h2Color);
 }
 .footer_options_container h5 a,
 .footer_options_container h6 a {
@@ -78,104 +82,96 @@
 .footer_options_container p {
   width: 100%;
 }
+
 .social_icons_container {
-  margin-top: 0.5rem;
   display: flex;
   align-items: center;
+  margin-top: 0.5rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
   justify-content: end;
   flex-direction: row-reverse;
-  column-gap: 1rem;
-  color: var(--backgeound);
+  color: var(--background);
 }
+
 .social_icon {
-  display: flex;
   position: relative;
+  display: flex;
+}
+.social_icon a {
+  display: flex;
 }
 .social_icon::before {
   content: "";
   position: absolute;
   inset: 50%;
-  height: 3rem;
-  width: 3rem;
   z-index: -1;
-  background: var(--blueGradient);
+  width: 3rem;
+  height: 3rem;
+  background: radial-gradient(50% 50% at 50% 50%, #5c84ff 5.73%, rgba(92, 132, 255, 0) 100%);
   transform: translate(-50%, -50%);
 }
-.social_icon a {
-  display: flex;
-}
 .social_icon:nth-child(1)::before {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(185, 0, 0, 0.5) 5%,
-    rgba(185, 0, 0, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, rgba(185, 0, 0, 0.5) 5%, rgba(185, 0, 0, 0) 100%);
 }
 .social_icon:nth-child(2)::before {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(0, 12, 177, 0.5) 5%,
-    rgba(0, 12, 177, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 12, 177, 0.5) 5%, rgba(0, 12, 177, 0) 100%);
 }
 .social_icon:nth-child(3)::before {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(0, 136, 146, 0.5) 5%,
-    rgba(0, 136, 146, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 136, 146, 0.5) 5%, rgba(0, 136, 146, 0) 100%);
 }
 .social_icon:nth-child(4)::before {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(183, 0, 255, 0.5) 5%,
-    rgba(183, 0, 255, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, rgba(183, 0, 255, 0.5) 5%, rgba(183, 0, 255, 0) 100%);
 }
+
 .superior_img:nth-child(1) {
   width: 4rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 15px rgb(255, 217, 0);
 }
+
 @media screen and (max-width: 1000px) {
   .container {
     width: 90%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
-    flex-direction: row-reverse;
     row-gap: 5vw;
-  }
-  .footer_section {
-    width: 47.75%;
-    height: fit-content;
-  }
-  .footer_section h4 {
-    font-size: 3.5vw;
-  }
-  .footer_options_container h6 a,
-  .footer_options_container p {
-    font-weight: 500;
-    font-size: 3vw;
-    color: var(--h2Color);
+    flex-direction: row-reverse;
   }
   .container::before {
     content: "";
     position: absolute;
     inset: 100% 50%;
-    transform: translateX(-50%);
     width: 100%;
     height: 15rem;
-    background: var(--lightBlueGradient);
+    transform: translateX(-50%);
+    background: radial-gradient(50% 50% at 50% 50%, #30c9c7 20%, rgba(48, 201, 199, 0) 100%);
   }
   .container::after {
     content: "© تمامی حقوق مادی و معنوی این سایت متعلق به پای تو پای می باشد.";
     position: absolute;
     inset: 102.5% 50%;
     width: 80vw;
-    text-align: center;
-    transform: translateX(-50%);
     direction: rtl;
+    color: var(--h2Color);
     font-size: 2.5vw;
     text-align: center;
+    transform: translateX(-50%);
+  }
+  .footer_section {
+    width: 47.75%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .footer_section h4 {
+    font-size: 3.5vw;
+  }
+  .footer_options_container h6 a,
+.footer_options_container p {
+    font-weight: 500;
+    font-size: 3vw;
     color: var(--h2Color);
   }
-}
+}/*# sourceMappingURL=footer.module.css.map */

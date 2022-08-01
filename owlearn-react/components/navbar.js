@@ -11,7 +11,7 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import DarkIcon from "../public/icons/navbar-owlearn-dark.png";
 import LightIcon from "../public/icons/navbar-owlearn-light.png";
 
-import styles from "../styles/navbar.module.css";
+import styles from "../styles/navbar/navbar.module.css";
 
 const Navbar = () => {
   const router = useRouter();
@@ -61,26 +61,24 @@ const Navbar = () => {
         }
         className={styles.container}
       >
-        <div className={styles.menuIconContainer}>
+        <div className={styles.menu_icon_container}>
           <MenuRoundedIcon
             sx={{ fontSize: "2.5rem" }}
             onClick={showNavbarHandler}
           />
         </div>
-        <div className={styles.authContainer}>
+        <div className={styles.auth_buttons_container}>
           <Link href={"/auth/signup"}>
             <button
-              className={styles.authButton}
               onClick={() => {
                 pathHandler("");
               }}
             >
-              ثبت نام{" "}
+              ثبت نام
             </button>
           </Link>
           <Link href={"/auth/login"}>
             <button
-              className={styles.authButton}
               onClick={() => {
                 pathHandler("");
               }}
@@ -89,8 +87,8 @@ const Navbar = () => {
             </button>
           </Link>
         </div>
-        <div className={styles.linksAndLogo}>
-          <div className={styles.links}>
+        <div className={styles.links__logo}>
+          <div>
             {links.map((link) => (
               <Link href={link.path} key={link.path}>
                 <a
@@ -106,7 +104,7 @@ const Navbar = () => {
           </div>
           <Link href={"/"}>
             <div
-              className={styles.logoAndName}
+              className={styles.logo__name}
               onClick={() => {
                 pathHandler("/");
               }}
@@ -128,21 +126,19 @@ const Navbar = () => {
           unmountOnExit
         >
           <>
-            <div className={styles.containerMobile}>
-              <div className={styles.authContainerMobile}>
+            <div className={styles.container_mobile}>
+              <div className={styles.auth_buttons_container_mobile}>
                 <Link href={"/auth/signup"}>
                   <button
-                    className={styles.authButtonMobile}
                     onClick={() => {
                       pathHandler("");
                     }}
                   >
-                    ثبت نام{" "}
+                    ثبت نام
                   </button>
                 </Link>
                 <Link href={"/auth/login"}>
                   <button
-                    className={styles.authButtonMobile}
                     onClick={() => {
                       pathHandler("");
                     }}
@@ -151,7 +147,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
-              <div className={styles.linksMobile}>
+              <div className={styles.links}>
                 {links.map((link) => (
                   <Link href={link.path} key={link.path}>
                     <a
@@ -166,7 +162,7 @@ const Navbar = () => {
                 ))}
               </div>
               <Link href={"/"}>
-                <div className={styles.logoAndNameMobile}>
+                <div className={styles.logo__name_container}>
                   <h1>Owlearn</h1>
                   <Image
                     src={isLightMode ? LightIcon : DarkIcon}
