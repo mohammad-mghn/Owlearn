@@ -1,6 +1,6 @@
 <h1><img src="https://emojis.slackmojis.com/emojis/images/1643515120/11400/among-us-party.gif?1643515120" width="25"/> Owlearn Micro Front-end</h1>
 
-<img src="https://emojis.slackmojis.com/emojis/images/1643514853/8661/fast_meow_party.gif?1643514853" width="15"/> [Vito-mohagheghian](https://github.com/vito-mohagheghian) developed this website and the technologies used in this project include:
+<img src="https://emojis.slackmojis.com/emojis/images/1643514853/8661/fast_meow_party.gif?1643514853" width="15"/> [Vito-mohagheghian](https://github.com/vito-mohagheghian) and  [Alireza Momeni](https://github.com/lorem10) developed this website and the technologies used in this project include:
 
 First, run the development server:
 
